@@ -1,5 +1,3 @@
-package oblig1;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -10,7 +8,9 @@ class InsertionSort {
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
         int[] A = input.lines().mapToInt(i -> Integer.parseInt(i)).toArray();
 
-        insertionSort(A);
+        System.out.println(A);
+
+        A = insertionSort(A);
 
         // Print result
         for (int num : A) {
@@ -18,7 +18,18 @@ class InsertionSort {
         }
     }
 
-    static void insertionSort(int[] A) {
-        // Skriv her
+    static int[] insertionSort(int[] A) {
+        int n = A.length; 
+        for (int i = 1; i < n-1; i++) {
+            int j = i; 
+            while (j > 0 && A[j-1] > A[j]) {
+                int temp = A[j-1];
+                A[j-1] = A[j];
+                A[j] = temp;
+
+                j = j-1;
+            }
+        }
+        return A;
     }
 }
