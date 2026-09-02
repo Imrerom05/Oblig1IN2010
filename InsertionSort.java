@@ -8,8 +8,6 @@ class InsertionSort {
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
         int[] A = input.lines().mapToInt(i -> Integer.parseInt(i)).toArray();
 
-        System.out.println(A);
-
         A = insertionSort(A);
 
         // Print result
@@ -20,7 +18,7 @@ class InsertionSort {
 
     static int[] insertionSort(int[] A) {
         int n = A.length; 
-        for (int i = 1; i < n-1; i++) {
+        for (int i = 1; i < n; i++) {
             int j = i; 
             while (j > 0 && A[j-1] > A[j]) {
                 int temp = A[j-1];
